@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Test</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller='mainCtrl'>
+		<header>
+			<p>Test App</p>
+		</header>
+		<Section class='search-section'>
+			<div class='search'>
+				<form class='search-form' ng-submit='search(routingNumber,accountNumber)'>
+					<input ng-model='routingNumber' type='text' placeholder='Routing Number'>{{routingNumber}}<br/><br/>
+					<input ng-model='accountNumber' type='text' placeholder='Account Number'>{{accountNumber}}<br/><br/>
+					<input type='submit' value='Search'>
+				</form>
+			</div>
+		</Section>
+		<Section class='results-section'>
+			<div class='results'>
+				<ul>
+					<li ng-repeat='item in results'>
+						{{item}}
+					</li>
+				</ul>
+			</div>
+		</Section>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/mainCtrl.js"></script>
+	<script src="js/mainService.js"></script>
+</body>
+</html>
